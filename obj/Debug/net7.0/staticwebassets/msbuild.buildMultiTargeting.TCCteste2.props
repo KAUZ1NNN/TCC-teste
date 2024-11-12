@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\TCCteste2.props" />
+</Project>

@@ -1,0 +1,17 @@
+@model TCCteste2.Models.Collaborator
+
+<h2>Excluir Colaborador</h2>
+
+<p>Tem certeza de que deseja excluir o colaborador abaixo?</p>
+
+<div>
+    <p><strong>Nome:</strong> @Model.Name</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+    <p><strong>Tipo de Seguro:</strong> @Model.InsuranceType</p>
+</div>
+
+<form asp-action="DeleteConfirmed" asp-controller="Collaborator" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

@@ -1,0 +1,32 @@
+@model List<TCCteste2.Models.Collaborator>
+
+<h2>Lista de Colaboradores</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Tipo de Seguro</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var collaborator in Model)
+        {
+            <tr>
+                <td>@collaborator.Id</td>
+                <td>@collaborator.Name</td>
+                <td>@collaborator.Email</td>
+                <td>@collaborator.InsuranceType</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@collaborator.Id" class="btn btn-warning btn-sm">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@collaborator.Id" class="btn btn-danger btn-sm">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Collaborator/Create" class="btn btn-primary">Adicionar Colaborador</a>
